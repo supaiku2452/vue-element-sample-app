@@ -3,8 +3,8 @@
         <el-header>
             <el-menu :default-active="activeIndex" mode="horizontal">
                 <el-menu-item index="1">Menu Item 1</el-menu-item>
-                <el-menu-item index="1">Menu Item 2</el-menu-item>
-                <el-menu-item index="1">Menu Item 3</el-menu-item>
+                <el-menu-item index="2">Menu Item 2</el-menu-item>
+                <el-menu-item index="3">Menu Item 3</el-menu-item>
             </el-menu>
         </el-header>
         <el-main>
@@ -53,7 +53,8 @@
                         :closable="false"
                         class="alert"
                         show-icon
-                ></el-alert>
+                >
+                </el-alert>
                 <el-alert
                         title="Notice Alert 1"
                         type="info"
@@ -61,10 +62,36 @@
                         :closable="false"
                         class="alert"
                         show-icon
-                ></el-alert>
+                >
+                </el-alert>
             </div>
 
-
+            <div>
+                <h3>Table Component.</h3>
+                <el-table
+                    v-bind:data="tableData"
+                >
+                    <el-table-column
+                        type="index"
+                    >
+                    </el-table-column>
+                    <el-table-column
+                        prop="date"
+                        label="Date"
+                    >
+                    </el-table-column>
+                    <el-table-column
+                        prop="name"
+                        label="Name"
+                    >
+                    </el-table-column>
+                    <el-table-column
+                        prop="address"
+                        label="Address"
+                    >
+                    </el-table-column>
+                </el-table>
+            </div>
         </el-main>
     </div>
 </template>
@@ -74,9 +101,39 @@
         name: "main.vue",
         data() {
             return {
-                "date": "",
-                "form": null,
-                "rule": "",
+                date: "",
+                form: null,
+                rule: "",
+                tableData: [{
+                    date: '2016-05-03',
+                    name: 'Tom',
+                    address: 'No. 189, Grove St, Los Angeles'
+                }, {
+                    date: '2016-05-02',
+                    name: 'Tom',
+                    address: 'No. 189, Grove St, Los Angeles'
+                }, {
+                    date: '2016-05-04',
+                    name: 'Tom',
+                    address: 'No. 189, Grove St, Los Angeles'
+                }, {
+                    date: '2016-05-01',
+                    name: 'Tom',
+                    address: 'No. 189, Grove St, Los Angeles'
+                }, {
+                    date: '2016-05-08',
+                    name: 'Tom',
+                    address: 'No. 189, Grove St, Los Angeles'
+                }, {
+                    date: '2016-05-06',
+                    name: 'Tom',
+                    address: 'No. 189, Grove St, Los Angeles'
+                }, {
+                    date: '2016-05-07',
+                    name: 'Tom',
+                    address: 'No. 189, Grove St, Los Angeles'
+                }],
+                activeIndex: '1',
             }
         },
         methods: {
